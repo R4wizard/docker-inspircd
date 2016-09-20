@@ -1,0 +1,37 @@
+{
+	"network":  "ShadowAcre",
+	"hostname": "irc.shadowacre.ltd",
+	"motd":     "Welcome to the ShadowAcre IRC Network.\nOperating since 20th August 2013.",
+	"rules":    "The rules here are pretty simple:\n - Don't be a dick.\n - Assume good faith.\n - Ask first, do later (in regards to bots etc.)\nHave fun, stay safe!",
+	"certificate": {
+		"organization": "ShadowAcre Ltd.",
+		"unit":         "IRC Network",
+		"state":        "London",
+		"country":      "UK"
+	},
+	"passwords": {
+		"die":     "149c7575e51d1525344d349d492a3552e93e016f1165c8117d82052e7297bfce",
+		"restart": "149c7575e51d1525344d349d492a3552e93e016f1165c8117d82052e7297bfce"
+	},
+	"admin": {
+		"name":  "Peter Corcoran",
+		"nick":  "R4wizard",
+		"email": "peter.corcoran@shadowacre.ltd"
+	},
+	"opers": [
+		{"name": "R4wizard", "password": "149c7575e51d1525344d349d492a3552e93e016f1165c8117d82052e7297bfce"},
+		{"name": "Jinux",    "password": "149c7575e51d1525344d349d492a3552e93e016f1165c8117d82052e7297bfce"}
+	],
+	"links": [
+		{"name": "services.irc.shadowacre.ltd", "address": "services.irc.shadowacre.ltd", "port": "6665", "sendpass": "inspircd-services1234", "recvpass": "inspircd-services1234", "ssl": "gnutls"}
+	],
+	"vhosts": [
+		{"name": "fbi",    "password": "149c7575e51d1525344d349d492a3552e93e016f1165c8117d82052e7297bfce", "host": "nsa.gov"},
+		{"name": "nsa",    "password": "149c7575e51d1525344d349d492a3552e93e016f1165c8117d82052e7297bfce", "host": "fbi.gov"},
+		{"name": "google", "password": "149c7575e51d1525344d349d492a3552e93e016f1165c8117d82052e7297bfce", "host": "google.com"},
+		{"name": "obia",   "password": "149c7575e51d1525344d349d492a3552e93e016f1165c8117d82052e7297bfce", "host": "obia.be"},
+		{"name": "jinux",  "password": "149c7575e51d1525344d349d492a3552e93e016f1165c8117d82052e7297bfce", "host": "hualla.net"},
+		{"name": "eru",    "password": "149c7575e51d1525344d349d492a3552e93e016f1165c8117d82052e7297bfce", "host": "eriador.uk"},
+		{"name": "jxm",    "password": "149c7575e51d1525344d349d492a3552e93e016f1165c8117d82052e7297bfce", "host": "jxm.in"}
+	]
+}
