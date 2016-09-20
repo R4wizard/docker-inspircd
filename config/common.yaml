@@ -1,23 +1,46 @@
 exec: [ "/inspircd/bin/start.sh" ]
-data_sources: [ file , environment, environment_json ]
+data_sources: [ defaults, file, environment, environment_json ]
 template_sources: [ file ]
+default_environment: production
 
 environments:
   production:
-    start.sh.erb:
-      target: /inspircd/bin/start.sh
-      perms: 0744
-    rules.txt.erb:
-      target: /inspircd/conf/rules.txt
-    motd.txt.erb:
-      target: /inspircd/conf/motd.txt
-    inspircd.conf.erb:
-      target: /inspircd/conf/inspircd.conf
-    modules.conf.erb:
-      target: /inspircd/conf/modules.conf
-    links.conf.erb:
-      target: /inspircd/conf/links.conf
-    opers.conf.erb:
-      target: /inspircd/conf/opers.conf
-    certtool.cfg.erb:
-      target: /inspircd/conf/certtool.cfg
+
+defaults:
+  global:
+    network: Unknown
+    hostname: irc.example.org
+    motd: "Welcome to the IRC Network"
+    rules: "No rules defined"
+    certificate:
+      organization: "Unknown"
+      unit: "Unknown"
+      state: "Unknown"
+      country: "XX"
+    passwords:
+      die: 5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8
+      restart: 5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8
+    admin:
+      name: Unknown
+      nick: Unknown
+      email: unknown@example.org
+    opers: []
+    links: []
+    vhosts: []
+  start.sh.erb:
+    target: /inspircd/bin/start.sh
+    perms: 0744
+  rules.txt.erb:
+    target: /inspircd/conf/rules.txt
+  motd.txt.erb:
+    target: /inspircd/conf/motd.txt
+  inspircd.conf.erb:
+    target: /inspircd/conf/inspircd.conf
+  modules.conf.erb:
+    target: /inspircd/conf/modules.conf
+  links.conf.erb:
+    target: /inspircd/conf/links.conf
+  opers.conf.erb:
+    target: /inspircd/conf/opers.conf
+  certtool.cfg.erb:
+    target: /inspircd/conf/certtool.cfg

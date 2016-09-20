@@ -24,6 +24,8 @@ RUN rm -rf /src
 
 EXPOSE 1025 6665 6666 6667 6668 65533 65534
 
+ENV tiller_json '{}'
+
 RUN apt-get -y install ruby && gem install tiller
 ADD config /etc/tiller
 CMD ["/usr/local/bin/tiller" , "-v"]
