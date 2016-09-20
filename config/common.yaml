@@ -37,5 +37,3 @@ defaults:
     target: /inspircd/conf/links.conf
   opers.conf.erb:
     target: /inspircd/conf/opers.conf
-  certtool.cfg.erb:
-    target: /inspircd/conf/certtool.cfg
