@@ -1,0 +1,23 @@
+exec: [ "/inspircd/bin/start.sh" ]
+data_sources: [ file , environment, environment_json ]
+template_sources: [ file ]
+
+environments:
+  production:
+    start.sh.erb:
+      target: /inspircd/bin/start.sh
+      perms: 0744
+    rules.txt.erb:
+      target: /inspircd/conf/rules.txt
+    motd.txt.erb:
+      target: /inspircd/conf/motd.txt
+    inspircd.conf.erb:
+      target: /inspircd/conf/inspircd.conf
+    modules.conf.erb:
+      target: /inspircd/conf/modules.conf
+    links.conf.erb:
+      target: /inspircd/conf/links.conf
+    opers.conf.erb:
+      target: /inspircd/conf/opers.conf
+    certtool.cfg.erb:
+      target: /inspircd/conf/certtool.cfg

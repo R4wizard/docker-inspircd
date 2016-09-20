@@ -1,0 +1,5 @@
+<% links.each do |link|  -%>
+<link name="<%= link['name'] %>" ipaddr="<%= link['address'] %>" port="<%= link['port'] %>" sendpass="<%= link['sendpass'] %>" recvpass="<%= link['recvpass'] %>" ssl="<%= link['ssl'] %>">
+<uline server="<%= link['name'] %>">
+<autoconnect period="60" server="<%= link['name'] %>">
+<% end -%>

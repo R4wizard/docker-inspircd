@@ -1,0 +1,5 @@
+<class name="All" commands="*" usermodes="*" chanmodes="*" privs="*">
+<type name="Network_Administrator" classes="All" vhost="<%= hostname %>" modes="+s +cCqQ">
+<% opers.each do |oper|  -%>
+<oper name="<%= oper['name'] %>" hash="sha256" password="<%= oper['password'] %>" host="*" vhost="<%= hostname %>" type="Network_Administrator">
+<% end -%>

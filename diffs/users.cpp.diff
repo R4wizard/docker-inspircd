@@ -1,0 +1,26 @@
+diff --git a/src/users.cpp b/src/users.cpp
+index 418f2c9..7782846 100644
+--- a/src/users.cpp
++++ b/src/users.cpp
+@@ -450,7 +450,7 @@ void UserIOHandler::OnDataReady()
+ 	if (user->quitting)
+ 		return;
+
+-	if (recvq.length() > user->MyClass->GetRecvqMax() && !user->HasPrivPermission("users/flood/increased-buffers"))
++	if (recvq.length() > user->MyClass->GetRecvqMax() && !user->HasPrivPermission("users/flood/increased-buffers") && !user->IsModeSet('B'))
+ 	{
+ 		ServerInstance->Users->QuitUser(user, "RecvQ exceeded");
+ 		ServerInstance->SNO->WriteToSnoMask('a', "User %s RecvQ of %lu exceeds connect class maximum of %lu",
+@@ -458,10 +458,10 @@ void UserIOHandler::OnDataReady()
+ 		return;
+ 	}
+ 	unsigned long sendqmax = ULONG_MAX;
+-	if (!user->HasPrivPermission("users/flood/increased-buffers"))
++	if (!user->HasPrivPermission("users/flood/increased-buffers") && !user->IsModeSet('B'))
+ 		sendqmax = user->MyClass->GetSendqSoftMax();
+ 	unsigned long penaltymax = ULONG_MAX;
+-	if (!user->HasPrivPermission("users/flood/no-fakelag"))
++	if (!user->HasPrivPermission("users/flood/no-fakelag") && !user->IsModeSet('B'))
+ 		penaltymax = user->MyClass->GetPenaltyThreshold() * 1000;
+
+ 	while (user->CommandFloodPenalty < penaltymax && getSendQSize() < sendqmax)
