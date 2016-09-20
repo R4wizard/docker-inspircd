@@ -3,12 +3,6 @@
 	"hostname": "irc.shadowacre.ltd",
 	"motd":     "Welcome to the ShadowAcre IRC Network.\nOperating since 20th August 2013.",
 	"rules":    "The rules here are pretty simple:\n - Don't be a dick.\n - Assume good faith.\n - Ask first, do later (in regards to bots etc.)\nHave fun, stay safe!",
-	"certificate": {
-		"organization": "ShadowAcre Ltd.",
-		"unit":         "IRC Network",
-		"state":        "London",
-		"country":      "UK"
-	},
 	"passwords": {
 		"die":     "149c7575e51d1525344d349d492a3552e93e016f1165c8117d82052e7297bfce",
 		"restart": "149c7575e51d1525344d349d492a3552e93e016f1165c8117d82052e7297bfce"

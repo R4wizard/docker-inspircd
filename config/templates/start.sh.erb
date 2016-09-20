@@ -2,7 +2,7 @@
 echo "generating self signed certificates for ssl..."
 mkdir -p /inspircd/conf/certs
 openssl req -x509 -nodes -newkey rsa:2048 -keyout /inspircd/conf/certs/key.pem -out /inspircd/conf/certs/cert.pem \
-	 -subj "/C=GB/ST=London/L=London/O=<%= network %>/OU=<%= network %> IRC Network/CN=<%= hostname %>"
+	 -subj "/C=XX/ST=Unspecified/L=Unspecified/O=<%= network %>/OU=<%= network %> IRC Network/CN=<%= hostname %>"
 openssl dhparam -out /inspircd/conf/dhparams.pem 2048 -dsaparam
 chmod 644 /inspircd/conf/certs/*
 echo "starting inspircd..."
