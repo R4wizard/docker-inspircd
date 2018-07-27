@@ -12,6 +12,7 @@ ENV tiller_json '{}'
 RUN apt-get update
 RUN apt-get install -y build-essential libssl-dev libssl1.0.0 openssl \
 	pkg-config gnutls-bin gnutls-dev sudo
+RUN apt-get install -y certbot -t jessie-backports
 RUN useradd -u 10000 -d /inspircd inspircd
 
 # Install tiller for managing docker configuration templates
@@ -39,5 +40,8 @@ RUN make
 RUN make install
 RUN apt-get purge -y build-essential
 RUN rm -rf /src
+
+# Install cron job
+echo "* * 1 */2 * certbot renew --dry-run 2>&1 >> /tmp/certbot.log" >> /etc/crontab
 
 WORKDIR /inspircd

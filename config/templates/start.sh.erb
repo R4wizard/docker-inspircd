@@ -5,6 +5,13 @@ openssl req -x509 -nodes -newkey rsa:2048 -keyout /inspircd/conf/certs/key.pem -
 	 -subj "/C=XX/ST=Unspecified/L=Unspecified/O=<%= network %>/OU=<%= network %> IRC Network/CN=<%= hostname %>"
 openssl dhparam -out /inspircd/conf/dhparams.pem 2048 -dsaparam
 chmod 644 /inspircd/conf/certs/*
+
+echo "attempting to use certbot for automatic certificate..."
+certbot certonly --standalone -d <%= hostname %>
+
+echo "starting crond for cert renew"
+cron -f &
+
 echo "starting inspircd..."
 cd /inspircd/
 sudo -u inspircd /inspircd/bin/inspircd --nofork
